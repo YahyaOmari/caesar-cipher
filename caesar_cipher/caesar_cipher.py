@@ -1,5 +1,5 @@
 import re
-from loader_words import word_list, name_list
+from .loader_words import word_list, name_list
 
 candidates = [
     "a dark and stormy night",
@@ -49,19 +49,20 @@ def encrypt(sentence, key):
         sentence_ord = (ord(i) - 97) + key
         sentence_char = (sentence_ord % 26) + 97
         sentence_encrypt += chr(sentence_char)
-        
-    print(sentence_encrypt)
+    
+    return sentence_encrypt
+    # print(sentence_encrypt)
 
 def decrypt(sentence, key):
-    encrypt(sentence, - key)
+    return encrypt(sentence, - key)
 
 def crack(sentence):
     # print(sentence)
     pass
 
 print("***********encrypt***********")
-encrypt("ABC", 1)
-encrypt("abc", 1)
+encrypt("Manchetser United", 13)
+encrypt("Irbid is beautiful city", 1)
 encrypt("abc", 1000)
 encrypt("xyz", 4) #aaa
 
